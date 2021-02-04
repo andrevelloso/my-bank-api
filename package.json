@@ -1,0 +1,33 @@
+{
+  "name": "my-bank-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r dotenv/config --experimental-modules app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "André Velloso <andrevvelloso@gmail.com>",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "nodemon": "^2.0.7",
+    "npm": "^6.14.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrevelloso/my-bank-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrevelloso/my-bank-api/issues"
+  },
+  "homepage": "https://github.com/andrevelloso/my-bank-api#readme",
+  "description": ""
+}
