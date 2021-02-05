@@ -37,7 +37,7 @@ app.patch('/contas/deposito/:ag/:cc/:valor', async (req, res) => {
     const ag = req.params.ag;
     const cc = req.params.cc;
 
-    const validate = await accountModel.countDocuments({ conta: cc })
+    const validate = await accountModel.countDocuments({ agencia: ag, conta: cc })
     if (validate == 1) {
       await accountModel.updateOne({ agencia: ag, conta: cc }, { $inc: { balance: value } })
       res.status(200).send('Depósito efetuado com sucesso')
@@ -56,7 +56,7 @@ app.patch('/contas/saque/:ag/:cc/:valor', async (req, res) => {
     const value = parseInt(req.params.valor) + tax;
     const ag = req.params.ag;
     const cc = req.params.cc;
-    let accBalance = await accountModel.find({ conta: cc }, { _id: 0, agencia: 0, conta: 0, name: 0, __v: 0 })
+    let accBalance = await accountModel.find({ agencia: ag, conta: cc }, { _id: 0, agencia: 0, conta: 0, name: 0, __v: 0 })
     accBalance = accBalance[0].balance;
     const validateBal = accBalance - value;
     if (validateBal >= 0) {
@@ -75,8 +75,8 @@ app.get('/contas/saldo/:ag/:cc', async (req, res) => {
   try {
     const ag = req.params.ag;
     const cc = req.params.cc;
-    console.log(ag)
-    console.log(cc)
+    //console.log(ag)
+    //console.log(cc)
 
     const accBalance = await accountModel.find({ agencia: ag, conta: cc }, { _id: 0, agencia: 0, conta: 0, __v: 0 })
     res.status(200).send(accBalance);
@@ -90,8 +90,8 @@ app.delete('/contas/encerrar/:ag/:cc', async (req, res) => {
   try {
     const ag = req.params.ag;
     const cc = req.params.cc;
-    console.log(ag)
-    console.log(cc)
+    //console.log(ag)
+    //console.log(cc)
 
     await accountModel.deleteOne({ agencia: ag, conta: cc })
     const atualizedAcc = await accountModel.find({});
@@ -148,7 +148,7 @@ app.get('/contas/media-agencia/:ag', async (req, res) => {
 // 10. Crie um endpoint para consultar os clientes com o menor saldo em conta.
 app.get('/contas/menores-saldos/:limite', async (req, res) => {
   try {
-    const limit = parseInt(req.params.limite);
+    const limit = parseInt(req.params.limite) || 1;
     const data = await accountModel.find({}, { _id: 0, name: 0, __v: 0 }).limit(limit).sort({ balance: 1 })
     res.send(data)
   } catch (err) {
@@ -159,7 +159,7 @@ app.get('/contas/menores-saldos/:limite', async (req, res) => {
 // 11. Crie um endpoint para consultar os clientes mais ricos do banco.
 app.get('/contas/maiores-saldos/:limite', async (req, res) => {
   try {
-    const limit = parseInt(req.params.limite);
+    const limit = parseInt(req.params.limite) || 1;
     const data = await accountModel.find({}, { _id: 0, __v: 0 }).limit(limit).sort({ balance: -1 })
     res.send(data)
   } catch (err) {
