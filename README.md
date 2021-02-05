@@ -1,13 +1,12 @@
+# my-bank-api
+
+## Está em execução em https://av-bank-api.herokuapp.com/contas
 Este projeto demonstra a integração de API em NodeJS com persistencia de dados no MongoDB Atlas (Cloud)
 e CD (Continuos Deploy) no Heroku (PAAS)
 
 Lembre-se de informar URL de conexão e porta no arquivo ".env" ou registar nas variaveis de ambiente
 MONGODB=
 PORT=
-
-# my-bank-api
-
-## Está em execução em https://av-bank-api.herokuapp.com/contas
 
 ## Poderá utilizar as seguintes rotas HTTP
 
@@ -18,8 +17,6 @@ no body da mensagem utilize o formato JSON com o seguinte modelo:
   name: Mario Caetano,
   balance: 550
 }
-
-# METODO <address>
 
 ## Consultar Todas as Contas
 ### GET  https://av-bank-api.herokuapp.com/contas
