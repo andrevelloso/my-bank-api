@@ -19,5 +19,6 @@ const app = express();
 app.use(express.json());
 app.use(accountRouter);
 
-app.listen(process.env.PORT, () => {
-  console.log('API conectada com sucesso na porta '+process.env.PORT);})
+// Definição de porta e inicialização do app 
+const APP_PORT = process.env.PORT || 3001;
+app.listen(APP_PORT, () => {console.log('API conectada com sucesso na porta ' + APP_PORT);})

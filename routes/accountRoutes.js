@@ -12,7 +12,7 @@ app.get('/contas', async (req, res) => {
   }
 })
 
-// Create account
+// Cria uma conta nova 
 app.post('/contas/nova', async (req, res) => {
   try {
     const dataNewAccount = req.body;
