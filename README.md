@@ -31,7 +31,7 @@ no body da mensagem utilize o formato JSON com o seguinte modelo:
 ### PATCH https://av-bank-api.herokuapp.com/contas/saque/:ag/:cc/:valor
 
 ## Consultar Saldo de uma conta
-### GET https://av-bank-api.herokuapp.com/contas/saldo/:ag/:cc'
+### GET https://av-bank-api.herokuapp.com/contas/saldo/:ag/:cc
 
 ## Encerrar uma conta
 ### DELETE https://av-bank-api.herokuapp.com/contas/encerrar/:ag/:cc
