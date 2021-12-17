@@ -10,6 +10,7 @@ e CD (Continuos Deploy) no Heroku (PAAS)
 Lembre-se de informar URL de conexão e porta no arquivo ".env" ou registar nas variaveis de ambiente
 
 MONGODB=
+
 PORT=
 
 ## Poderá utilizar as seguintes rotas HTTP
