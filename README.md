@@ -1,14 +1,14 @@
 # my-bank-api
 
 ## Está em execução em https://av-bank-api.herokuapp.com/contas
-<<<<<<< HEAD
 
-=======
->>>>>>> 5dc36353d14252fbcd18223b000dab8a7bad250e
+<!-- <<<<<<< HEAD ======= >>>>>>> 5dc36353d14252fbcd18223b000dab8a7bad250e  -->
+
 Este projeto demonstra a integração de API em NodeJS com persistencia de dados no MongoDB Atlas (Cloud)
 e CD (Continuos Deploy) no Heroku (PAAS)
 
 Lembre-se de informar URL de conexão e porta no arquivo ".env" ou registar nas variaveis de ambiente
+
 MONGODB=
 PORT=
 
@@ -16,11 +16,11 @@ PORT=
 
 no body da mensagem utilize o formato JSON com o seguinte modelo:
 
-{ agencia: 10,
-<<<<<<< HEAD
-conta: 1040,
-name: Mario Caetano,
-balance: 550
+{ 
+  agencia: 10,
+  conta: 1040,
+  name: Mario Caetano,
+  balance: 550
 }
 
 ## Consultar Todas as Contas
@@ -65,7 +65,7 @@ balance: 550
 
 ## Transfere a conta com o maior saldo de cada agência para agência PRIME (99)
 
-=======
+{
   conta: 1040,
   name: Mario Caetano,
   balance: 550
@@ -102,5 +102,5 @@ balance: 550
 ### GET https://av-bank-api.herokuapp.com/contas/maiores-saldos/:limite
 
 ## Transfere a conta com o maior saldo de cada agência para agência PRIME (99) 
->>>>>>> 5dc36353d14252fbcd18223b000dab8a7bad250e
+
 ### GET https://av-bank-api.herokuapp.com/contas/transfere-clientes-prime
